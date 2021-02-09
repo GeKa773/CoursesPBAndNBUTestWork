@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="margin_for_all">16sp</dimen>
+    <dimen name="title_text">26sp</dimen>
+    <dimen name="val_pay_prod">20sp</dimen>
+    <dimen name="recycler_item_private_bank">26sp</dimen>
+    <dimen name="recycler_item_nbu">22sp</dimen>
+</resources>

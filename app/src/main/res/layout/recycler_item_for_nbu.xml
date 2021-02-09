@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+
+    <TextView
+        android:id="@+id/nameValNBUTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_for_all"
+        android:layout_weight="1"
+        android:text="TextView"
+        android:textSize="@dimen/recycler_item_nbu"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/rateValNBUTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_for_all"
+        android:layout_marginRight="@dimen/margin_for_all"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:text="TextView"
+        android:textSize="@dimen/recycler_item_nbu"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/valNBUTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/valNBUTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:layout_marginRight="@dimen/margin_for_all"
+        android:layout_marginBottom="@dimen/margin_for_all"
+        android:text="TextView"
+        android:textSize="@dimen/recycler_item_nbu"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rateValNBUTextView" />
+</androidx.constraintlayout.widget.ConstraintLayout>

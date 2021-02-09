@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Курсы валют</string>
+    <string name="private_bank">ПриватБанк</string>
+    <string name="nbu">НБУ</string>
+
+
+    <string name="val">currency</string>
+    <string name="sale_val">saleRateNB</string>
+    <string name="buy_val">saleRate</string>
+    <string name="some_json">exchangeRate</string>
+    <string name="cc">cc</string>
+    <string name="rate">rate</string>
+
+    <string name="eur_val">EUR</string>
+    <string name="usd_val">USD</string>
+    <string name="rur_val">RUB</string>
+    <string name="byn_val">BYN</string>
+    <string name="pln_val">PLN</string>
+    <string name="cad_val">CAD</string>
+    <string name="hkd_val">HKD</string>
+
+    <string name="eur_full">Євро</string>
+    <string name="usd_full">Долар США</string>
+    <string name="rur_full">Російський рубль</string>
+    <string name="byn_full">Білоруський рубль</string>
+    <string name="pln_full">Злотий</string>
+    <string name="cad_full">Канадський долар</string>
+    <string name="hkd_full">Гонконгівський долар</string>
+
+    <string name="val_text_view">Валюта</string>
+    <string name="buy_text_view">Покупка</string>
+    <string name="sale_text_view">Продажа</string>
+
+</resources>
