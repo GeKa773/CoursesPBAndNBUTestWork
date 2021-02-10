@@ -4,6 +4,7 @@ public class NBU {
     private String name;
     private String rate;
     private String val;
+    private boolean select;
 
     public String getName() {
         return name;
@@ -29,9 +30,18 @@ public class NBU {
         this.val = val;
     }
 
-    public NBU(String name, String rate, String val) {
+    public boolean isSelect() {
+        return select;
+    }
+
+    public void setSelect(boolean select) {
+        this.select = select;
+    }
+
+    public NBU(String name, String rate, String val, boolean select) {
         this.name = name;
         this.rate = rate;
         this.val = val;
+        this.select = select;
     }
 }

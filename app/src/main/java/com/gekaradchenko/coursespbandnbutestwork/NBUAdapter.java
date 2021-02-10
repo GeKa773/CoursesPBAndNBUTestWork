@@ -15,21 +15,7 @@ public class NBUAdapter extends RecyclerView.Adapter<NBUAdapter.NBUViewHolder> {
 
 
     private ArrayList<NBU> nbuArrayList = new ArrayList<>();
-//    public boolean[] selects = new boolean[nbuArrayList.size()];
-//
-//    public boolean[] getSelects() {
-//        return selects;
-//    }
-//
-//    public void setSelects(boolean[] selects) {
-//        this.selects = selects;
-//    }
-//
-//    public void allSelectsSetTrue() {
-//        for (int i = 0; i < selects.length; i++) {
-//            selects[i] = true;
-//        }
-//    }
+
 
     public void setNbuArrayList(ArrayList<NBU> nbuArrayList) {
         this.nbuArrayList = nbuArrayList;
@@ -54,13 +40,9 @@ public class NBUAdapter extends RecyclerView.Adapter<NBUAdapter.NBUViewHolder> {
         if (position%2 !=0){
             holder.itemView.setBackgroundResource(R.color.color_for_second_recycler_view_item);
         }
-
-//        if (selects.length != 0) {
-//            if (selects[position])
-//                holder.itemView.setBackgroundColor(Color.RED);
-//            else
-//                holder.itemView.setBackgroundColor(Color.GREEN);
-//        }
+        if (nbu.isSelect()){
+            holder.itemView.setBackgroundResource(R.color.color_for_selected_recycler_view_item);
+        }
 
     }
 

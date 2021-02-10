@@ -10,23 +10,23 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_for_all"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="200dp"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
 
             android:layout_weight="2"
             android:text="@string/private_bank"
-            android:textSize="@dimen/title_text"
+            android:textSize="@dimen/title_date_for_landscape"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="51dp"
             tools:layout_editor_absoluteY="78dp" />
@@ -55,20 +55,20 @@
             android:onClick="setDateForPrivateBank"
             android:text="TextView"
             android:textColor="@color/color_for_date"
-            android:textSize="@dimen/title_date"
+            android:textSize="@dimen/title_date_for_landscape"
             tools:layout_editor_absoluteX="290dp"
             tools:layout_editor_absoluteY="76dp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_for_all"
         android:layout_marginTop="16dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <TextView
@@ -105,31 +105,31 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewForPrivateBank"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_for_all"
-        android:layout_marginTop="16dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerViewForPrivateBank">
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView6"
-            android:layout_width="200dp"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="2"
             android:text="@string/nbu"
-            android:textSize="@dimen/title_text"
+            android:textSize="@dimen/title_date_for_landscape"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="51dp"
             tools:layout_editor_absoluteY="78dp" />
@@ -147,17 +147,17 @@
 
         <TextView
             android:id="@+id/dateNBUTextView"
-            android:maxLines="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:clickable="true"
             android:gravity="center"
+            android:maxLines="1"
             android:onClick="setDateForNBU"
             android:text="TextView"
             android:textColor="@color/color_for_date"
-            android:textSize="@dimen/title_date"
+            android:textSize="@dimen/title_date_for_landscape"
             tools:layout_editor_absoluteX="290dp"
             tools:layout_editor_absoluteY="76dp" />
     </LinearLayout>
@@ -166,9 +166,10 @@
         android:id="@+id/recyclerViewForNBU"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout3"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
 

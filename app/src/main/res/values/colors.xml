@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="color_for_date">#E3A141</color>
     <color name="color_for_second_recycler_view_item">#324CAF50</color>
+    <color name="color_for_selected_recycler_view_item">#327A7A7A</color>
 </resources>

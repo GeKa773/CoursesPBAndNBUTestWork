@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DatePickerDialog;
+import android.content.res.Configuration;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Spannable;
@@ -95,7 +96,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        if(getScreenOrientation()){
+            setTitle("");
+        }
 
         init();
         setDateTextView();
@@ -110,23 +113,25 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("VAL", privateBankArrayList.get(position).getVal());
             }
         });
-
-
     }
 
     private void scrollRecyclerViewForNBU(String val) {
         for (int i = 0; i < nbuArrayList.size(); i++) {
             if (val.equals(nbuArrayList.get(i).getName())) {
                 recyclerViewForNBU.smoothScrollToPosition(i);
+                if (!nbuArrayList.get(i).isSelect()){
+                selectedIsFalse();
+                nbuArrayList.get(i).setSelect(true);
+                }
+                else selectedIsFalse();
 
-//                nbuAdapter.allSelectsSetTrue();
-//                Log.d("VAL", nbuArrayList.get(i).getVal()+" this");
-//                nbuAdapter.selects = new boolean[nbuArrayList.size()];
-//                boolean[] test = nbuAdapter.getSelects();
-//                test[i] = false;
-//                nbuAdapter.setSelects(test);
-
+                nbuAdapter.setNbuArrayList(nbuArrayList);
             }
+        }
+    }
+    private void selectedIsFalse(){
+        for (int i = 0; i<nbuArrayList.size();i++){
+            nbuArrayList.get(i).setSelect(false);
         }
     }
 
@@ -134,7 +139,6 @@ public class MainActivity extends AppCompatActivity {
         Date date = new Date();
         SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
         SimpleDateFormat sdfForString = new SimpleDateFormat("yyyyMMdd");
-
 
         SpannableString ss = new SpannableString(format.format(date));
         ss.setSpan(new UnderlineSpan(),0,format.format(date).length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -157,7 +161,6 @@ public class MainActivity extends AppCompatActivity {
 
         privateBankAdapter = new PrivateBankAdapter();
         nbuAdapter = new NBUAdapter();
-
 
     }
 
@@ -226,27 +229,25 @@ public class MainActivity extends AppCompatActivity {
         nbuArrayList = new ArrayList<>();
         nbuArrayList.add(new NBU(getString(R.string.eur_val),
                 EURDecimal.setScale(2, RoundingMode.HALF_UP).toString(),
-                getString(R.string.eur_full)));
+                getString(R.string.eur_full), false));
         nbuArrayList.add(new NBU(getString(R.string.usd_val),
                 USDDecimal.setScale(2, RoundingMode.HALF_UP).toString(),
-                getString(R.string.usd_full)));
+                getString(R.string.usd_full), false));
         nbuArrayList.add(new NBU(getString(R.string.rur_val),
                 RURDecimal.setScale(2, RoundingMode.HALF_UP).toString(),
-                getString(R.string.rur_full)));
+                getString(R.string.rur_full), false));
         nbuArrayList.add(new NBU(getString(R.string.byn_val),
                 BYNDecimal.setScale(2, RoundingMode.HALF_UP).toString(),
-                getString(R.string.byn_full)));
+                getString(R.string.byn_full), false));
         nbuArrayList.add(new NBU(getString(R.string.pln_val),
                 PLNDecimal.setScale(2, RoundingMode.HALF_UP).toString(),
-                getString(R.string.pln_full)));
+                getString(R.string.pln_full), false));
         nbuArrayList.add(new NBU(getString(R.string.cad_val),
                 CADDecimal.setScale(2, RoundingMode.HALF_UP).toString(),
-                getString(R.string.cad_full)));
+                getString(R.string.cad_full), false));
         nbuArrayList.add(new NBU(getString(R.string.hkd_val),
                 HKDDecimal.setScale(2, RoundingMode.HALF_UP).toString(),
-                getString(R.string.hkd_full)));
-
-
+                getString(R.string.hkd_full), false));
 
     }
 
@@ -468,6 +469,12 @@ public class MainActivity extends AppCompatActivity {
             }
             return "";
         }
+    }
+
+    private boolean getScreenOrientation(){
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
+            return false;
+        else return true;
     }
 
     public boolean onCreateOptionsMenu(Menu menu){
